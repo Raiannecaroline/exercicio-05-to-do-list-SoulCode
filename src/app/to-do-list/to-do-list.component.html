@@ -1,0 +1,32 @@
+<mat-card class="card-container">
+
+  <mat-card-title>{{ titulo }}</mat-card-title>
+  <mat-card-subtitle>{{ subtitulo }}</mat-card-subtitle>
+
+  <mat-card-actions>
+
+    <div>
+      <input type="text" placeholder="Liste a sua tarefa aqui..."  #addItens (keyup.enter)="adicionarItems(addItens.value)">
+      <button mat-raised-button color="accent" (click)="adicionarItems(addItens.value)">
+        <mat-icon>add</mat-icon>
+      </button>
+    </div>
+
+    <mat-list *ngFor="let items of item">
+
+      <div>
+          {{ items }} <button mat-raised-button color="warn" (click)="removeItems(items)">
+            <mat-icon>delete_sweep</mat-icon>
+          </button>
+      </div>
+
+    </mat-list>
+    
+    <div>
+      <p>Adicionou {{ item.length }} na sua lista</p> <button class="button" mat-raised-button color="accent" (click)="removerTodaLista()">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </div>
+    
+  </mat-card-actions>
+</mat-card>
