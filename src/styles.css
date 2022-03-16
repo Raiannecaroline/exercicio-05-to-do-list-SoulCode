@@ -6,15 +6,26 @@ html{
 
 body{
   margin: 0; 
-  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  font-family: 'Courier New', Courier, monospace; 
   display: flex;
   justify-content: center;
   align-items: center;
   align-content: center;
   height: 100vh;
+  background: rgb(29,79,253);
+  background: linear-gradient(30deg, rgba(29,79,253,1) 25%, rgba(62,217,160,1) 65%);
+  background-size: 300% 300%; 
+  animation: colors 15s ease infinite; 
 }
 
-.button{
-  display: flex;
+@keyframes colors{
+  0%{
+    background-position: 0% 50%;
+  }
+  50%{
+    background-position: 100% 50%;
+  }
+  100%{
+    background-position: 0% 50%;
+  }
 }
-

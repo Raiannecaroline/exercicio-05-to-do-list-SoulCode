@@ -1,29 +1,46 @@
 <mat-card class="card-container">
 
-  <mat-card-title>{{ titulo }}</mat-card-title>
-  <mat-card-subtitle>{{ subtitulo }}</mat-card-subtitle>
+  <mat-card-title class="titulo-toDo">{{ titulo }}</mat-card-title>
+  <mat-card-subtitle class="sub-toDo">{{ subtitulo }}</mat-card-subtitle>
 
-  <mat-card-actions>
+  <mat-card-actions appearance="fill">
 
     <div>
-      <input type="text" placeholder="Liste a sua tarefa aqui..."  #addItens (keyup.enter)="adicionarItems(addItens.value)">
-      <button mat-raised-button color="accent" (click)="adicionarItems(addItens.value)">
+      <input class="input-toDo"
+      type="text"
+      placeholder="Liste a sua tarefa aqui..."
+      #addItens
+      (keyup.enter)="adicionarItems(addItens.value)">
+      <button class="btn-primary"
+      mat-raised-button
+      color="primary"
+      (click)="adicionarItems(addItens.value)"
+      appEstilizaButton>
         <mat-icon>add</mat-icon>
       </button>
     </div>
 
-    <mat-list *ngFor="let items of item">
+    <mat-list *ngFor="let items of itemDadoStorage; let idx = index" class="list-toDo">
 
       <div>
-          {{ items }} <button mat-raised-button color="warn" (click)="removeItems(items)">
-            <mat-icon>delete_sweep</mat-icon>
-          </button>
+        {{ items }}  
+        <button
+        mat-raised-button color="warn"
+        (click)="removeItems(idx)"
+        (click)="buttonEvent()">
+          <mat-icon>delete_sweep</mat-icon>
+        </button>
       </div>
 
     </mat-list>
     
-    <div>
-      <p>Adicionou {{ item.length }} na sua lista</p> <button class="button" mat-raised-button color="accent" (click)="removerTodaLista()">
+    <div class="clear-toDo">
+      <p>Adicionou {{ itemDadoStorage.length }}° na sua lista</p> <button 
+      class="btn-secundary" 
+      mat-raised-button
+      color="warn" 
+      (click)="removerTodaLista()"
+      (click)="buttonEvent()">
         <mat-icon>clear</mat-icon>
       </button>
     </div>

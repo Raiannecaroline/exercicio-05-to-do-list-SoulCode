@@ -1,8 +1,62 @@
 .card-container{
   display: flex;
-  max-width: 700px;
+  width: 550px;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background-color: #293462;
+}
+
+.card-container:hover{
+  -webkit-box-shadow: 0px 10px 13px -7px #000000, 5px 10px 10px 8px rgba(112,112,112,0.64); 
+  box-shadow: 0px 10px 13px -7px #000000, 5px 10px 10px 8px rgba(112,112,112,0.64);
+  transition: all 0.6s;
+}
+
+.titulo-toDo{
+  font-size: 60px;
+  font-weight: bold;
+  margin: 10px;
+  text-align: center;
+}
+
+.sub-toDo{
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: underline;
+  text-align: center;
+}
+
+.input-toDo{
+  padding: 10px;
+  border: none;
+  background-color: #c4c4c4;
+  border-radius: 5px;
+  width: 225px;
+  align-items: center;
+}
+
+.btn-primary{
+  border-radius: 5px;
+  font-size: 17px;
+  cursor: pointer;
+}
+
+.list-toDo{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clear-toDo{
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.btn-secondary{
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
 }

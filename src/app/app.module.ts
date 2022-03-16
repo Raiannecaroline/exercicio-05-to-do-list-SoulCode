@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToDoListComponent } from './to-do-list/to-do-list.component';
 import { MaterialModule } from './material.module';
+import { EstilizaButtonDirective } from './estiliza-button.directive';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ToDoListComponent
+    ToDoListComponent,
+    EstilizaButtonDirective
   ],
   imports: [
     BrowserModule,
